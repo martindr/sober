@@ -1,32 +1,29 @@
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <img
-    width="40"
-    alt="Angular Logo"
-    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
-  />
-  <span>Welcome</span>
-</div>
-
-<p></p>
-
 <div class="content" role="main">
-
-  <ul *ngFor="let person of dataSource; let i = index" style="list-style-type:none; margin-bottom: 50px;">
-    <li>
-      <input matInput type="text" [(ngModel)]="person.name">
-      <div>
-        <input matInput [matDatepicker]="picker" [(ngModel)]="person.startDate">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </div>
-    </li>
-    <mat-chip-list>
-      <mat-chip [value]="calculateDays(person.startDate)">{{calculateDays(person.startDate)}} days</mat-chip>
-    </mat-chip-list>
-</ul>
+  <mat-toolbar color="primary">
+    <span>Sober</span>
+    <span class="toolbar-spacer"></span>
+    <a (click)="openDialog()" mat-icon-button aria-label="Add button">
+      <mat-icon>add</mat-icon>
+    </a>
+  </mat-toolbar>
 
 
+  <mat-expansion-panel hideToggle *ngFor="let person of people; let i = index"
+    style="list-style-type:none;">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+          <input matInput type="text" [(ngModel)]="person.name">
+        <div class="days">{{ person.getDays() }}</div>
+      </mat-panel-title>
+      <mat-panel-description>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-form-field appearance="outline">
+      <input matInput [matDatepicker]="picker" [(ngModel)]="person.startDate">
+      <mat-hint>Sober since</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </mat-expansion-panel>
 
-
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet>--> 

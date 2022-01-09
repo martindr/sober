@@ -1,29 +1,51 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Person } from './person.model';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DataStoreService } from './data-store.service';
+import { AddPersonDialogComponent } from './add-person/add-person.component';
 
-export interface Person {
-  name: string;
-  startDate: Date;
-  days: Number
-}
 
-const ELEMENT_DATA: Person[] = [
-  {name: 'Person 1', startDate: new Date("3/12/2020"), days: 1},
-  {name: 'Person 2', startDate: new Date("11/13/2021"), days: 123},
-  {name: 'Person 3', startDate: new Date("5/14/2019"), days: 18}
-];
+// const PEOPLE_DATA: Person[] = [
+//   new Person("Jimbo", new Date("2/2/2012")) ,
+//   new Person("Judy", new Date("11/23/2021")) 
+// ];
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers:  [ DataStoreService ]
 })
 export class AppComponent {
   title = 'sober';
   displayedColumns: string[] = ['name'];
-  dataSource = ELEMENT_DATA;
+  people: Person[] = [];
 
-  calculateDays(dt: Date): Number {
-    return Math.round((Date.now() - dt.getTime()) / (1000 * 3600 * 24));
+  constructor(public dialog: MatDialog, private dataStoreService: DataStoreService,) {
+    //this.people = PEOPLE_DATA;
   }
 
+  ngOnInit(): void {
+    this.dataStoreService.getPeople().subscribe((peeps) => {
+
+      for (let p of peeps) {
+        this.people.push(new Person(p.name, p.startDate));
+      }
+
+    });
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddPersonDialogComponent, {
+      width: '250px',
+      data: new Person("", new Date())
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+
+      this.people.push(result);
+      this.dataStoreService.savePeople(this.people);
+    });
+  }
 }
