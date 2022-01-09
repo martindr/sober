@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1641693107138,
+  "timestamp": 1641765157406,
   "index": "/sober/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/sober/favicon.ico",
         "/sober/index.html",
-        "/sober/main.2c4bae8346fae1af.js",
+        "/sober/main.d259f3cfd0ed5fb2.js",
         "/sober/manifest.webmanifest",
         "/sober/polyfills.c66591b2ce249c5a.js",
         "/sober/runtime.b5dd9cf788029916.js",
@@ -52,8 +52,8 @@
     "/sober/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/sober/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/sober/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/sober/index.html": "891507b1c51f4760a06e458a8902e873b911e58f",
-    "/sober/main.2c4bae8346fae1af.js": "504e114e673f692faf482e01ab19823752ca003f",
+    "/sober/index.html": "059b8c3a287973906845bc2b3d8f660a99d2dc77",
+    "/sober/main.d259f3cfd0ed5fb2.js": "bd4029f4e59f23757ffc24660ede82758ae8a799",
     "/sober/manifest.webmanifest": "a5658187a11f21bdc5fa968865c639be80450d5c",
     "/sober/polyfills.c66591b2ce249c5a.js": "bc2205f78a04b25c22ff74254a9af679c6c3dc51",
     "/sober/runtime.b5dd9cf788029916.js": "0fc7d1b65e48650bd23a88ce3cf97752ac2d2b95",
