@@ -39,6 +39,7 @@ export class AppComponent {
 
   delete(name: String) {
     this.people.splice(this.people.findIndex(p => p.name === name),1);
+    this.save();
   }
 
   save() {
