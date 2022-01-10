@@ -9,11 +9,15 @@ export class Person {
     }
 
     private calculateDays(dt: Date): Number {
-        return Math.round((Date.now() - dt.getTime()) / (1000 * 3600 * 24));
+        let now = new Date();
+        now.setHours(0, 0, 0, 0);
+        dt.setHours(0, 0, 0, 0);
+
+        return Math.round((now.getTime() - dt.getTime()) / (1000 * 3600 * 24));
     }
 
-    getDays(): string {
-        return this.calculateDays(this.startDate) + " days";
+    getDays(): Number {
+        return this.calculateDays(this.startDate);
     }
 
 }

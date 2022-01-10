@@ -27,17 +27,33 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.dataStoreService.getPeople().subscribe((peeps) => {
-
+      
       for (let p of peeps) {
         this.people.push(new Person(p.name, p.startDate));
       }
 
+      this.sortPeople();
+
     });
+  }
+
+  delete(name: String) {
+    this.people.splice(this.people.findIndex(p => p.name === name),1);
+  }
+
+  save() {
+    this.sortPeople();
+    this.dataStoreService.savePeople(this.people);
+    console.log("Saved");
+  }
+
+  sortPeople() {
+    this.people = this.people.sort((a, b) => Number(a.getDays()) - Number(b.getDays()));
   }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddPersonDialogComponent, {
-      width: '250px',
+      width: '90vw',
       data: new Person("", new Date())
     });
 
@@ -45,7 +61,8 @@ export class AppComponent {
       console.log('The dialog was closed');
 
       this.people.push(result);
-      this.dataStoreService.savePeople(this.people);
+      this.sortPeople();
+      this.save();
     });
   }
 }

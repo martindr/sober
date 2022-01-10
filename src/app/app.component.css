@@ -2,8 +2,15 @@
     flex: 1 1 auto;
   }
 
+.name {
+    color:#3f51b5;
+    width:50vw;
+    font-size:1.5em;
+    white-space: nowrap;
+  }
+
 .days {
-  color:red;
-  font-size:1em;
+  color:#ff4081;
+  font-size:1.5em;
   white-space: nowrap;
 }

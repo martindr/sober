@@ -7,23 +7,31 @@
     </a>
   </mat-toolbar>
 
-
-  <mat-expansion-panel hideToggle *ngFor="let person of people; let i = index"
-    style="list-style-type:none;">
+  <mat-expansion-panel *ngFor="let person of people; let i = index" style="list-style-type:none;">
     <mat-expansion-panel-header>
       <mat-panel-title>
-          <input matInput type="text" [(ngModel)]="person.name">
-        <div class="days">{{ person.getDays() }}</div>
+        <div class="name">{{ person.name }}</div>
+        <div class="days">{{ person.getDays() }} days</div>
       </mat-panel-title>
       <mat-panel-description>
       </mat-panel-description>
     </mat-expansion-panel-header>
+
     <mat-form-field appearance="outline">
-      <input matInput [matDatepicker]="picker" [(ngModel)]="person.startDate">
+      <input matInput type="text" [(ngModel)]="person.name" (change)="save()">
+      <mat-hint>Name</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <input matInput [matDatepicker]="picker" [(ngModel)]="person.startDate" (ngModelChange)="save()">
       <mat-hint>Sober since</mat-hint>
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
+    <p></p>
+    <button mat-fab color="primary" aria-label="Del" (click)="delete(person.name)">
+      <mat-icon>delete</mat-icon>
+    </button>
+
   </mat-expansion-panel>
 
-<!-- <router-outlet></router-outlet>--> 
+  <!-- <router-outlet></router-outlet>-->
