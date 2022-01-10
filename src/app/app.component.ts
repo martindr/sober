@@ -59,11 +59,11 @@ export class AppComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-
-      this.people.push(result);
-      this.sortPeople();
-      this.save();
+      if (result.name != null && result.name != "") {
+        this.people.push(result);
+        this.sortPeople();
+        this.save();
+      }
     });
   }
 }
