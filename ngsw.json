@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1641786781325,
+  "timestamp": 1641787578161,
   "index": "/sober/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/sober/favicon.ico",
         "/sober/index.html",
-        "/sober/main.7cfc832a8f471ced.js",
+        "/sober/main.ce7c24c5dce9e7c5.js",
         "/sober/manifest.webmanifest",
         "/sober/polyfills.c66591b2ce249c5a.js",
         "/sober/runtime.b5dd9cf788029916.js",
@@ -29,6 +29,7 @@
         "ignoreVary": true
       },
       "urls": [
+        "/sober/assets/cedars.png",
         "/sober/assets/icons/icon-128x128.png",
         "/sober/assets/icons/icon-144x144.png",
         "/sober/assets/icons/icon-152x152.png",
@@ -43,6 +44,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
+    "/sober/assets/cedars.png": "430204455e600e9c8793bfcffa93e220ef0bc3d3",
     "/sober/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "/sober/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
     "/sober/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
@@ -52,8 +54,8 @@
     "/sober/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/sober/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/sober/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/sober/index.html": "273c296c2b511dcf07ba6132965ab6b2288f0bfc",
-    "/sober/main.7cfc832a8f471ced.js": "a4bf533a67af32fb255dad50f4c9a0ff0b59a809",
+    "/sober/index.html": "5b65d47884a4552ec8ae7b95fff3009145e828cd",
+    "/sober/main.ce7c24c5dce9e7c5.js": "b88662e7a2cf3fbcc4defb3844d75fdc972cffaa",
     "/sober/manifest.webmanifest": "a5658187a11f21bdc5fa968865c639be80450d5c",
     "/sober/polyfills.c66591b2ce249c5a.js": "bc2205f78a04b25c22ff74254a9af679c6c3dc51",
     "/sober/runtime.b5dd9cf788029916.js": "0fc7d1b65e48650bd23a88ce3cf97752ac2d2b95",
