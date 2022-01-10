@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1641787578161,
+  "timestamp": 1641788464151,
   "index": "/sober/index.html",
   "assetGroups": [
     {
@@ -11,6 +11,7 @@
         "ignoreVary": true
       },
       "urls": [
+        "/sober/assets/cedars.png",
         "/sober/favicon.ico",
         "/sober/index.html",
         "/sober/main.ce7c24c5dce9e7c5.js",
@@ -29,7 +30,6 @@
         "ignoreVary": true
       },
       "urls": [
-        "/sober/assets/cedars.png",
         "/sober/assets/icons/icon-128x128.png",
         "/sober/assets/icons/icon-144x144.png",
         "/sober/assets/icons/icon-152x152.png",
