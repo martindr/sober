@@ -9,8 +9,8 @@
   </mat-toolbar>
 
   <img src="assets/cedars.png" alt="treatment-centre" class="banner-image" />
-
-  <mat-expansion-panel *ngFor="let person of people; let i = index" style="list-style-type:none;">
+  <mat-accordion multi="false">
+  <mat-expansion-panel  *ngFor="let person of people; let i = index" style="list-style-type:none;">
     <mat-expansion-panel-header>
       <mat-panel-title>
         <div class="name">{{ person.name }}</div>
@@ -36,5 +36,6 @@
       </button>
     </div>
   </mat-expansion-panel>
+  </mat-accordion>
 
   <!-- <router-outlet></router-outlet>-->
