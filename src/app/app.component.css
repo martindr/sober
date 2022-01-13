@@ -31,3 +31,10 @@ input {
   font-size:1.3em;
   white-space: nowrap;
 }
+
+.duration {
+  color:#ff4081;
+  font-size:1.3em;
+  white-space: nowrap;
+  margin-bottom: 1em;
+}

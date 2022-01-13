@@ -1,3 +1,5 @@
+import intervalToDuration from "date-fns/intervalToDuration";
+
 export class Person {
 
     public name: string;
@@ -18,6 +20,34 @@ export class Person {
 
     getDays(): Number {
         return this.calculateDays(this.startDate);
+    }
+
+    getDuration(): String {
+
+        const now = new Date();
+
+        const duration = intervalToDuration({
+            start: this.startDate,
+            end: now
+          });
+
+        const yearLabel = duration.years === 1 ? "year" : "years";
+        const monthLabel = duration.months === 1 ? "month" : "months";
+        const dayLabel = duration.days === 1 ? "day" : "days";
+        
+        if (duration.months === 0 && duration.years === 0) {
+            return "";
+        }
+
+        let friendlyDuration = `${duration.days} ${dayLabel}`;
+        if (duration.months != 0) {
+            friendlyDuration = `${duration.months} ${monthLabel} ` + friendlyDuration;
+        }
+        if (duration.years != 0) {
+            friendlyDuration = `${duration.years} ${yearLabel} ` + friendlyDuration;
+        }
+
+        return friendlyDuration;
     }
 
 }

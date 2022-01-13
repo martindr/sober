@@ -1,7 +1,7 @@
 <div class="content" role="main">
 
   <mat-toolbar color="primary">
-    <span>Sober 0.1</span>
+    <span>Sober 0.11</span>
     <span class="toolbar-spacer"></span>
     <a (click)="openDialog()" mat-icon-button aria-label="Add button">
       <mat-icon>add</mat-icon>
@@ -19,6 +19,7 @@
       <mat-panel-description>
       </mat-panel-description>
     </mat-expansion-panel-header>
+    <div class="duration">{{ person.getDuration() }}</div>
     <div class="edit-area">
       <mat-form-field appearance="outline">
         <input matInput type="text" [(ngModel)]="person.name" (change)="save()">
