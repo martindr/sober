@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1641872090662,
+  "timestamp": 1642046006000,
   "index": "/sober/index.html",
   "assetGroups": [
     {
@@ -54,7 +54,7 @@
     "/sober/assets/icons/icon-72x72.png": "46915d6846db5f40628ff85d9098bb27bc118939",
     "/sober/assets/icons/icon-96x96.png": "09c9de438762b4c97a3610d25baa94a0fd5049d8",
     "/sober/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/sober/index.html": "319b4a43d54c0babaae9bbd886284c33d36c56cd",
+    "/sober/index.html": "7ca3ddcb9a7fe0ba3b494fcbd60e09146b492703",
     "/sober/main.f2e0637864b4c842.js": "d9ea074e04c1bafe0e9b3de0ad7b4514a7962187",
     "/sober/manifest.webmanifest": "a5658187a11f21bdc5fa968865c639be80450d5c",
     "/sober/polyfills.c66591b2ce249c5a.js": "bc2205f78a04b25c22ff74254a9af679c6c3dc51",
