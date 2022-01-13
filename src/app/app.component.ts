@@ -3,7 +3,7 @@ import { Person } from './person.model';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DataStoreService } from './data-store.service';
 import { AddPersonDialogComponent } from './add-person/add-person.component';
-import { Observable, timer } from 'rxjs';
+
 
 @Component({
   selector: 'app-root',
@@ -23,7 +23,7 @@ export class AppComponent {
 
     // Refresh data every hour so as to recalculate days sober
 
-    const subscribe = timer(0, 3600000).subscribe(val => {
+    //const subscribe = timer(0, 3600000).subscribe(val => {
       this.people = [];
       this.dataStoreService.getPeople().subscribe((peeps) => {
         for (let p of peeps) {
@@ -32,7 +32,7 @@ export class AppComponent {
         this.sortPeople();
         console.log("refreshed people");
       });
-    });
+    //});
   }
 
   delete(name: String) {

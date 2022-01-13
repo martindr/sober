@@ -1,3 +1,4 @@
+import { Observable, timer } from 'rxjs';
 import intervalToDuration from "date-fns/intervalToDuration";
 
 export class Person {
@@ -29,12 +30,12 @@ export class Person {
         const duration = intervalToDuration({
             start: this.startDate,
             end: now
-          });
+        });
 
         const yearLabel = duration.years === 1 ? "year" : "years";
         const monthLabel = duration.months === 1 ? "month" : "months";
         const dayLabel = duration.days === 1 ? "day" : "days";
-        
+
         if (duration.months === 0 && duration.years === 0) {
             return "";
         }
@@ -48,6 +49,7 @@ export class Person {
         }
 
         return friendlyDuration;
+
     }
 
 }
